@@ -1,0 +1,32 @@
+﻿<Window x:Class="Proyecto.Noticias"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto"
+        mc:Ignorable="d"
+        Title="Noticias" Height="450" Width="800">
+    <Grid Margin="0,0,2,0">
+        <Border Grid.Row="0" Background="Black" Height="50" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <!-- Coloca aquí tu logo -->
+                <Image Source="imagenes/f1.png" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <!-- DropMenu para Teams -->
+                <ComboBox x:Name="TeamsDropDown" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,14,0,0" Width="80">
+                    <ComboBoxItem Content="RedBull"/>
+                    <ComboBoxItem Content="AstonMartin"/>
+                    <ComboBoxItem Content="Ferrari"/>
+                    <!-- Agrega más equipos según sea necesario -->
+                </ComboBox>
+                <!-- Botones de navegación -->
+                <Button Content="Pilotos" Margin="10,14" Width="57" Click="pilotos_Click"/>
+                <Button Content="Circuitos" Margin="0,14,10,14" Width="67" Click="circuitos_Click"/>
+                <Button Content="Noticias" Margin="0,14,10,14" Width="71" Click="noticias_Click"/>
+                <Button Content="Tienda" Margin="0,14,10,14" RenderTransformOrigin="1.256,0.487" Width="70" Click="tienda_Click"/>
+            </StackPanel>
+        </Border>
+        <Button Grid.Row="0" Content="Sign In" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,10,0" Width="68" />
+        <WebBrowser Name="webBrowser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,55,0,0"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="Proyecto.Carrito"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto"
+        mc:Ignorable="d"
+        Title="Carrito" Height="450" Width="800">
+    <Grid>
+        <!-- Encabezado del carrito -->
+        <StackPanel Background="LightGray" Orientation="Vertical" VerticalAlignment="Top" Height="100">
+            <TextBlock Text="Tu Carrito de Compra" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Lista de productos en el carrito -->
+        <ListBox Name="carritoListBox" Margin="10,120,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <Image Source="{Binding Imagen}" Height="50" Width="50" Margin="0,0,10,0"/>
+                        <TextBlock Text="{Binding Nombre}" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Precio, StringFormat=' - Precio: {0:C}'}"/>
+                        <Button Content="Eliminar" Tag="{Binding Id}" Click="EliminarProducto_Click"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Total del carrito -->
+        <TextBlock Name="totalTextBlock" Margin="10,10,10,10" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontWeight="Bold"/>
+    </Grid>
+</Window>

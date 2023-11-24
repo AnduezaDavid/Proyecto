@@ -1,0 +1,39 @@
+﻿<Page x:Class="Proyecto.Equipos1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Proyecto"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Equipos1">
+
+    <Grid>
+        <!-- Banner o logo arriba a la izquierda -->
+        <Border Grid.Row="0" Background="Black" Height="50" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <!-- Coloca aquí tu logo -->
+                <Image Source="imagenes/f1.png" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <!-- DropMenu para Teams -->
+                <ComboBox x:Name="TeamsDropDown" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,14,0,0" Width="80">
+                    <ComboBoxItem Content="RedBull"/>
+                    <ComboBoxItem Content="AstonMartin"/>
+                    <ComboBoxItem Content="Ferrari"/>
+                    <!-- Agrega más equipos según sea necesario -->
+                </ComboBox>
+                <!-- Botones de navegación -->
+                <Button Content="Pilotos" Margin="10,14" Width="57"/>
+                <Button Content="Circuitos" Margin="0,14,10,14" Width="67"/>
+                <Button Content="Noticias" Margin="0,14,10,14" Width="71"/>
+                <Button Content="Tienda" Margin="0,14,10,14" RenderTransformOrigin="1.256,0.487" Width="70"/>
+            </StackPanel>
+        </Border>
+        <Button Grid.Row="0" Content="Sign In" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,10,0" Width="68" />
+
+
+        <!-- Foto que ocupa toda la página -->
+        <Image x:Name="EquipoImage" Stretch="Fill" Margin="0,50,0,0"/>
+        <ContentControl x:Name="MainContent" />
+        <!-- Puedes agregar más contenido debajo de la foto si es necesario -->
+    </Grid>
+</Page>
